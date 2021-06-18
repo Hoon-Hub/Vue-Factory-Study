@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넓이 구하기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="app">
+        <p>
+            넓이: {{ area }}
+        </p>
+        <p>
+            <button @click="length += 1">세로추가</button>
+            <button @click="width += 1 ">가로추가</button>
+        </p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                length: 5,
+                width: 3,
+            },
+            computed: {
+                area: function() {
+                    return this.width * this.length
+                }
+            },
+            watch: {
+                length: function(newVal, oldVal) {
+                    console.log('이전 세로 길이 : ' + oldVal + '\n새 세로 길이 : ' + newVal)
+                },
+                width: function(newVal, oldVal) {
+                    console.log('이전 가로 길이 : ' + oldVal + '\n새 가로 길이 : ' + newVal)
+                },
+                area: function(newVal, oldVal) {
+                    console.log('이전 넓이 : ' + oldVal + '\n새 넓이 : ' + newVal)
+                }
+            },
+            beforeUpdate: function() {
+                console.log('데이터 변경은 ' + '결과값 변경 이전에 이루어졌습니다.')
+            }
+        });
+    </script>
+</body>
+
+</html>

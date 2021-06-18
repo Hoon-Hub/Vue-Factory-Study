@@ -1,0 +1,43 @@
+html {
+    box-sizing: border-box;
+}
+
+.app {
+    width: 800px;
+    margin: 10% auto auto auto;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    background-color: rgba(134, 134, 134, 0.466);
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+.item-content {
+    padding-top: 50px;
+    border-radius: 5px 5px 5px;
+    border: 2px solid rgb(194, 194, 194);
+    margin-right: 12px;
+}
+
+.setupBtn {
+    text-align: right;
+}
+.shopping-cart {
+    margin-right:0;
+    display:inline-block;
+}
+.title-name{
+    width: 750px;
+    text-align:center;
+}
+.cart {
+    width:100px;
+}
