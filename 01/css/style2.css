@@ -18,3 +18,9 @@ header {
     background-color: rgba(134, 134, 134, 0.466);
     margin-bottom: 5px;
 }
+.name-input{
+    display:flex;
+    justify-content: baseline;
+    align-items: baseline;
+    flex-direction: row;   
+}
