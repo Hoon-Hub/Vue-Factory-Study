@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+<body>
+<div id="app" class="app">
+    <header>
+        <div class="navbar navbar-default title-name">
+            <h1 v-text="sitename" class="sitename"></h1>
+        </div>
+        <div class="navbar navbar-nav navbar-right cart">
+            <button type="button" class="btn btn-sm check-out-btn" @click="showCheckOut">
+                <span class="shopping-cart" style="font-size:12px;">
+                    {{ cartItemCount }}
+                </span>
+                <span style="font-size:9px;">체크아웃</span> 
+            </button>
+        </div>
+    </header>
+    <main>
+    <div class="col-md-6">
+        <strong>이름: </strong>
+        <input v-model="order.firstName" class="form-control" type="text">
+    </div>
+    <div class="col-md-6">
+        <strong>성: </strong>
+        <input  v-model="order.lastName" class="form-control"type="text">
+    </div>
+    <div class="col-md-12 verify">
+        <pre>
+            이름 : {{order.firstName}}
+            성   : {{order.lastName}}
+        </pre>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12"><strong>주소: </strong></div>
+        <div class="col-md-12">
+            <input v-model="order.address" class="form-control" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-12"><strong>도시: </strong></div>
+        <div class="col-md-12">
+            <input v-model="order.city" class="form-control" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            <strong>주: </strong>
+            <select v-model="order.state" class="form-control" name="" id="">
+                <option disabled value="">주</option>
+                <option>AL</option>
+                <option>AR</option>
+                <option>CA</option>
+                <option>NV</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-6 col-md-offset-4">
+            <strong>우편번호 : </strong>
+            <input v-model="order.zip" class="form-control" type="text">
+        </div>
+    </div>
+    <div class="col-md-12 verify">
+        <pre>
+            이름: {{order.firstName}}
+            성: {{order.lastName}}
+            주소: {{order.address}}
+            도시: {{order.city}}
+            우편번호: {{order.zip}}
+            주: {{order.state}}
+        </pre>
+    </div>
+</main>
+</div>
+
+
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            sitename: "Vue.js 애완용품샵",
+            showProduct: true,
+            order: {
+                firstName: '',
+                lastName: '',
+                addrerss: '',
+                city: '',
+                zip: '',
+                state: '',
+            }
+        }
+    })
+</script>
+</body>
+</html>

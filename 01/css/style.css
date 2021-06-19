@@ -19,7 +19,9 @@ header {
 h1 {
     font-size: 30px;
 }
-
+.check-out-btn{
+    border:1px solid black;
+}
 .item-content {
     padding-top: 50px;
     border-radius: 5px 5px 5px;
@@ -30,6 +32,7 @@ h1 {
 .setupBtn {
     text-align: right;
 }
+
 .shopping-cart {
     margin-right:0;
     display:inline-block;
